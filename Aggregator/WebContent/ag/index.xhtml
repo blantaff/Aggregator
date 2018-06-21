@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:dialog="http://org.frb.scar/jsf/dialogs"
+	xmlns:sec="http://org.frb.scar/jsf/security"
+	template="../templates/ag-basic-template.xhtml">
+
+	<ui:define name="content">
+
+		<p:notificationBar position="top" effect="slide" styleClass="top"
+			widgetVar="bar">
+			<h:outputText
+				value="Ignore the UI for now.  We will make it look awesome with Primefaces later!"
+				style="font-size:36px;" />
+		</p:notificationBar>
+
+		<p>This is where the content goes.</p>
+		<p>We can now login using the database. And use the logout button
+			at the top.</p>
+		<p>Add a new user to your DB, see they can login too. Remember to
+			encrypt using the Encryption utility.</p>
+
+		<p>
+			<a href="createIdentity.xhtml">Create new Identity</a>
+		</p>
+		<p:commandButton value="Show" onclick="PF('bar').show()" type="button"
+			icon="ui-icon-arrow-1-s" />
+		<p:commandButton value="Hide" onclick="PF('bar').hide()" type="button"
+			icon="ui-icon-arrow-1-n" />
+	</ui:define>
+
+</ui:composition>

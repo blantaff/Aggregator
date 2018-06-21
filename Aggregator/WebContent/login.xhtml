@@ -1,0 +1,35 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:dialog="http://org.frb.scar/jsf/dialogs"
+	xmlns:sec="http://org.frb.scar/jsf/security"
+	template="templates/ag-login-template.xhtml">
+
+	<ui:define name="content">
+
+		<h:form id="login-form">
+
+
+			<p:messages showDetail="true"></p:messages>
+
+			<h:panelGrid columns="2" cellpadding="10">
+				<h:outputText value="LoginID" />
+				<p:inputText value="#{authenticationBean.loginId}" />
+
+				<h:outputText value="Password" />
+				<p:password value="#{authenticationBean.password}" />
+			</h:panelGrid>
+
+			<p:commandButton value="Sign In"
+				action="#{authenticationBean.login(identityProfile)}"
+				update="login-form" />
+
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>

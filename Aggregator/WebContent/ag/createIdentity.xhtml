@@ -1,0 +1,51 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:dialog="http://org.frb.scar/jsf/dialogs"
+	xmlns:sec="http://org.frb.scar/jsf/security"
+	template="../templates/ag-basic-template.xhtml">
+
+	<ui:define name="content">
+
+		<h1>Create new Identity</h1>
+
+		<br />
+
+		<h:form id="create-identity-form">
+
+			<p:messages showDetail="true"></p:messages>
+
+			<h:panelGrid columns="2" cellpadding="10">
+				<h:outputText value="First name" />
+				<p:inputText value="#{createIdentityBean.identity.fname}" />
+
+				<h:outputText value="Last name" />
+				<p:inputText value="#{createIdentityBean.identity.lname}" />
+
+				<h:outputText value="Email" />
+				<p:inputText value="#{createIdentityBean.identity.email}" />
+
+				<h:outputText value="LoginID" />
+				<p:inputText value="#{createIdentityBean.identity.loginId}" />
+
+			</h:panelGrid>
+
+			<br />
+			<p:commandButton value="Create Identity"
+				action="#{createIdentityBean.createIdentity}"
+				update="create-identity-form" />
+			<br />
+			<h:outputText value="FYI: Password will be auto set to 'changeme'" />
+			<br />
+			<h:outputText
+				value="TODO: Force user to change password on first login attempt." />
+
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>
