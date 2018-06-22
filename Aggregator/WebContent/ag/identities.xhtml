@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:dialog="http://org.frb.scar/jsf/dialogs"
+	xmlns:sec="http://org.frb.scar/jsf/security"
+	template="../templates/ag-basic-template.xhtml">
+
+	<ui:define name="content">
+
+		<h1>Identities</h1>
+
+		<br />
+
+		<h:form id="view-identity-form">
+
+			<p:messages showDetail="true"></p:messages>
+
+			<p:dataTable var="i" value="#{viewIdentitiesBean.identityList}">
+				<p:column headerText="Id">
+					<h:outputText value="#{i.id}" />
+				</p:column>
+
+				<p:column headerText="First Name">
+					<h:outputText value="#{i.fname}" />
+				</p:column>
+
+				<p:column headerText="Last Name">
+					<h:outputText value="#{i.lname}" />
+				</p:column>
+
+				<p:column headerText="Email">
+					<h:outputText value="#{i.email}" />
+				</p:column>
+
+				<p:column headerText="LoginId">
+					<h:outputText value="#{i.loginId}" />
+				</p:column>
+			</p:dataTable>
+
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>
